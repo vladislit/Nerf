@@ -1,0 +1,90 @@
+NERMAP
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Event Map</title>
+ <style>
+  #map {
+   position: relative;
+   width: 100%;
+   height: 100%;
+   background-image: url('hjjj.jpg');
+   background-size: cover;
+   background-position: center;
+   border: 1px solid black;
+  }
+
+  .dot {
+   position: absolute;
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   background-color: red;
+   cursor: pointer;
+  }
+
+  .preview {
+   position: absolute;
+   display: none;
+   width: 200px;
+   height: 200px;
+   background-color: beige;
+   overflow: scroll;
+   padding: 20px;
+   box-sizing: border-box;
+   transition: opacity 0.5s ease;
+   z-index: 999;
+  }
+
+  .preview h2 {
+   margin-top: 0;
+  }
+
+  .preview img {
+   max-width: 100%;
+   margin-bottom: 10px;
+   cursor: pointer;
+  }
+
+  .overlay {
+   position: fixed;
+   display: none;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.7);
+   z-index: 1000;
+  }
+
+  .overlay img {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   max-height: 90%;
+   max-width: 90%;
+  }
+
+ </style>
+</head>
+<body>
+ <div id="map">
+  <div class="dot" style="top: 633px; left: 920px;"></div>
+  <div class="dot" style="top: 367px; left: 1135px;"></div>
+  <div class="dot" style="top: 145px; left: 655px;"></div>
+  <div class="dot" style="top: 310px; left: 275px;"></div>
+  <div class="dot" style="top: 277px; left: 292px;"></div>
+  <div class="preview"></div>
+  <div class="overlay">
+   <img src="">
+  </div>
+ </div>
+
+<script>
+  const dots = document.querySelectorAll('.dot');
+  const preview = document.querySelector('.preview');
+  const overlay = document.querySelector('.overlay');
+  const overlayImage = document.querySelector('.overlay img');
+
+  const locations = [   {    name: 'Alpine Mission',    image: 'alpine.jpg',    description: 'Best place to camp w. river and good elevation of terrain for snipers. Not snowy (pics are older)'   },   {    name: 'Deadly Hills',    image: 'hill.jpg',    description: 'Good place for camping and for those who like hiding. The negative part is we do not know what is in the bushes.'   },   {    name: 'Haunted Woods',    image: 'rainforest.jpg',    description: 'Rainforest vibe.'   },   {    name: 'Old Motel',    image: 'motel.jpg',    description: 'Awesome place for close encounters, backdoor field, and woods. Negative: not the best place to camp.'   },   {    name: 'Highway Rush',    image: 'highway.jpg',    description: 'Chilly
